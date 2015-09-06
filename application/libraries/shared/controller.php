@@ -18,7 +18,7 @@ namespace Shared {
          * @readwrite
          */
         protected $_user;
-
+        
         /**
          * @protected
          */
@@ -28,13 +28,32 @@ namespace Shared {
             }
         }
 
+        public function seo($params = array()) {
+            $seo = Registry::get("seo");
+            foreach ($params as $key => $value) {
+                $property = "set" . ucfirst($key);
+                $seo->$property($value);
+            }
+            $params["view"]->set("seo", $seo);
+        }
+
+        public function noview() {
+            $this->willRenderLayoutView = false;
+            $this->willRenderActionView = false;
+        }
+
+        public function JSONview() {
+            $this->willRenderLayoutView = false;
+            $this->defaultExtension = "json";
+        }
+
         /**
          * @protected
          */
         public function _secure() {
             $user = $this->getUser();
             if (!$user) {
-                header("Location: /login.html");
+                header("Location: /login");
                 exit();
             }
         }

@@ -12,7 +12,18 @@ $routes = array(
         "pattern" => "home",
         "controller" => "home",
         "action" => "index"
+    ),
+    array(
+        "pattern" => "logout",
+        "controller" => "users",
+        "action" => "logout"
+    ),
+    array(
+        "pattern" => "login",
+        "controller" => "admin",
+        "action" => "login"
     )
+
 );
 
 // add defined routes

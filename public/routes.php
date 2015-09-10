@@ -14,14 +14,39 @@ $routes = array(
         "action" => "index"
     ),
     array(
-        "pattern" => "logout",
-        "controller" => "users",
-        "action" => "logout"
+        "pattern" => "contact",
+        "controller" => "home",
+        "action" => "contact"
     ),
     array(
-        "pattern" => "login",
-        "controller" => "admin",
-        "action" => "login"
+        "pattern" => "about",
+        "controller" => "home",
+        "action" => "about"
+    ),
+    array(
+        "pattern" => "medicines",
+        "controller" => "home",
+        "action" => "medicines"
+    ),
+    array(
+        "pattern" => "quesans",
+        "controller" => "home",
+        "action" => "quesans"
+    ),
+    array(
+        "pattern" => "gallery",
+        "controller" => "home",
+        "action" => "gallery"
+    ),
+    array(
+        "pattern" => "packages/special",
+        "controller" => "home",
+        "action" => "special"
+    ),
+    array(
+        "pattern" => "packages/seasonal",
+        "controller" => "home",
+        "action" => "seasonal"
     )
 
 );

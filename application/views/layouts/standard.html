@@ -1,45 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
+  
 <head>
+    <!-- Basic meta tags -->
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="SwiftMVC Framework">
-    <meta name="author" content="Faizan Ayubi">
+    <title>AyurVeda Treatment</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-    <title>SwiftMVC Framework</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-
-    <!-- Custom CSS -->
-    <style>
-    body {
-        padding-top: 70px;
-        /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
-    }
-    </style>
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!-- CSS styles -->
+    <link href="{echo CDN}css/validationengine.css" rel="stylesheet">
+    <link href="{echo CDN}css/style.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{echo CDN}css/prettyPhoto.css"/>
+      
+    <!-- Google Web font 'PT Sans and Yanone Kaffeesatz' -->  
+    <link href="{echo CDN}css/cssbea1.css?family=PT+Sans+Narrow|Yanone+Kaffeesatz:400,300,700" rel="stylesheet' type='text/css">
+     
+    <!-- Jquery Library -->
+    <script src="{echo CDN}js/jquery-1.7.1.min.js"></script>
+    
+    <!-- for IE6-8 support of HTML5 elements & Seperate CSS for ie-8-7 -->
     <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <link href="css/ie8-7.css" rel="stylesheet">
     <![endif]-->
+    
+  </head>
 
-</head>
-
-<body>
+  <body>
 
     {include layouts/navigation/standard.html}
     {ayield action}
+ 
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row-fluid">
+          <div class="span3">
+            <ul class="nav nav-list">
+              <li class="nav-header">Contact Us</li>
+              <li><span class="label label-inverse">Telephone</span> +911-22611386</li>
+              <li><span class="label label-inverse">Fax</span> +11 78945654</li>
+              <li><span class="label label-inverse">Mobile</span> +91 9999498910</li>
+              <li><span class="label label-inverse">Email</span> info@ayurvedictreatment.in</li>
+              <li><span class="label label-inverse">Location</span> #321, Street, City</li>
+            </ul>
+          </div><!--/.span3 -->
 
-    <!-- jQuery Version 1.11.1 -->
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+          <div class="span3">
+           <ul class="nav nav-list">
+              <li class="nav-header">WEBSITE NAVIGATION</li>
+              <li><a href="#">Home Page</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Services We Offer</a></li>
+              <li><a href="#">Meet Our Doctors</a></li>
+              <li><a href="#">Our Blog</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div><!--/.span3 -->
+        
+          <div class="span3">
+            <ul class="nav nav-list">
+              <li class="nav-header">Social with us</li>
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">Google Plus</a></li>
+              <li><a href="#">Linkedin</a></li>
+              <li><a href="#">Youtube</a></li>
+            </ul>
+          </div><!--/.span3 -->
 
-    <!-- Bootstrap Core JavaScript -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+          <div class="span3">
+            <ul class="nav nav-list">
+              <li class="nav-header">Sample Menu</li>
+              <li><a href="#">Menu one</a></li>
+              <li><a href="#">Menu Two</a></li>
+              <li><a href="#">Menu Three</a></li>
+              <li><a href="#">Menu Four</a></li>
+              <li><a href="#">Menu Five</a></li>
+              <li><a href="#">Menu Six</a></li>
+            </ul>
+          </div><!--/.span3 -->
+          <div class="span12 copyright">
+          <span class="pull-left">
+            © 2015 Ayurvedic Treatment. All Rights reserved.
+          </span>
+            
+            <span class="pull-right"><a href="https://cloudstuffs.com/" target="_blank">Developed By CloudStuffs</a></span>
+          </div><!--/.span12 -->
+        </div><!--/.row-fluid -->
+      </div><!--/.container -->
+    </footer>
+    <!-- End Footer -->
+    <!-- Twitter Bootstrap -->
+    <script src="{echo CDN}js/bootstrap/bootstrap.js"></script>
+    <!-- Form Validation -->
+    <script src="{echo CDN}js/validate/jquery.validationEngine.js"></script> 
+    <script type="text/javascript" src="{echo CDN}js/jquery.elastislide.js"></script>
+    <!--Gallery -->
+     <script type="text/javascript" src="{echo CDN}js/photo-gallery/jquery.prettyPhoto.js"></script> 
+    <script type="text/javascript" src="{echo CDN}js/photo-gallery/jquery.quicksand.js"></script> 
+    <script type="text/javascript" src="{echo CDN}js/photo-gallery/jquery.easing.1.3.js"></script> 
+    <script type="text/javascript" src="{echo CDN}js/photo-gallery/script.js"></script>
 
-</body>
-
+    <!-- Custom to call-->
+    <script src="{echo CDN}js/custom.js"></script>
+  </body>
 </html>

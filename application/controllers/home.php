@@ -12,5 +12,26 @@ class Home extends Controller {
     public function index() {
         
     }
+    public function contact() {
+        
+    }
+    public function about() {
+        
+    }
+    public function gallery() {
+        
+    }
+    public function special() {
+        
+    }
+    public function seasonal() {
+        
+    }
+    public function medicines() {
+        
+    }
+    public function quesans() {
+        
+    }
 
 }

@@ -1,17 +1,124 @@
-<!-- Page Content -->
-<div class="container">
-
-    <div class="row">
-        <div class="col-lg-12 text-center">
-            <h1>A PHP MVC Framework</h1>
-            <p class="lead">Contains Many Features</p>
-            <ul class="list-unstyled">
-                <li>Bootstrap v3.3.1</li>
-                <li>jQuery v2.11.1</li>
-            </ul>
-        </div>
-    </div>
-    <!-- /.row -->
-
-</div>
-<!-- /.container -->
+<section id="content">
+      <div class="container">
+        <div class="row-fluid">
+          <div class="span12">
+            <div class="marg-top-med page">
+              <h3 class="tree">Welcome to Ayurvedic Treatment</h3>
+              <p>
+                We offer relaxation, rejuvenation and weight reduction therapies.
+ Ayurveda offer safe and effective treatment for anxiety, sleeplessness, depression and other stress related ailments .We also treat Joint Pain ,Back Pain, Neck Pain, Frozen Shoulder, Spondilitis ,Sports Injuries, Arthritis, Paralysis, Migraine, Piles,Tonsilitis, Asthma, Diabetes, Obesity ,Allergy, Skin Ailments, Psoriasis, Peptic Ulcer, Acidity, Gynecological Disorders, Auto Immune diseases, all Neurological complaints, Degenerative diseases etc.
+              </p>
+            </div><!--/.marg-top-med .page -->
+          </div><!--/.span12 -->
+    </div><!--/.row-fluid -->  
+      
+    <div class="row-fluid">
+          <div class="span4">
+            <div class="page">
+              <h3 class="tree">Why Ayurveda?</h3>
+              <span class="box-icon">
+                <img src="{echo CDN}img/box-icons/team.png" alt=""/>
+              </span>
+              <img src="{echo CDN}img/doctors.png" alt="" />
+              <p>The major sources of Ayurvedic Treatments are pure herbs and minerals which has no side effects. This system provides low cost treatment for various common disorders and several chronic ailments. According to Ayurveda, health is maintained by three functional Mechanisms vata, pitta and kapha. It focuses on causes rather than symptoms and it has preventive measures, promotive and curative interventions.It is a comprehensive health care system.</p>
+              <span class="btn btn-green">Read More</span>
+            </div><!--/.page -->
+          </div><!--/.span4 -->
+      
+      <div class="span4">
+        <div class="page">
+          <h3 class="tree">What We Offer?</h3>
+          <span class="box-icon">
+        <img src="{echo CDN}img/box-icons/offer.png" alt="" />
+          </span>
+          <img src="{echo CDN}img/ayurveda.jpg" width="100%" alt="Ayurveda Logo"/>
+          <ul class="ul-1">
+        <li>Complete Relaxation: Body & Mind</li>
+        <li>Saundarya (Beauty) Treatments </li>
+        <li>Treatments for Mental Rejuvenation</li>
+        <li>Purification & Detoxification </li>
+        <li>Healing & Strengthening Treatments</li>
+        <li>Relax Head, Hair, Eyes & Nose</li>
+        <li>Ease Nerves & Relax Joints</li>
+        <li>Combination Threpies</li>
+        <li>Seasonal Treatments</li>
+          </ul>
+          <span class="btn btn-green">Learn More</span>
+        </div><!--/.page -->
+      </div><!--/.span4 -->
+    
+      <div class="span4">
+        <div class="page dark">
+          <h3 class="snow">Get Appointment</h3>
+          <span class="box-icon">
+        <img src="{echo CDN}img/box-icons/appontment.png" alt="" />
+          </span>
+          <p>Wunc vitae tortor a risus condimentum laoreet. Aliquam vel felis eget sapien consequat rutrum.</p>
+        <form id="formID" method="post" action="#">
+          <label>Name in full</label>
+          <input name="name" class="validate[required] text-input span12" type="text">          
+          <label>Gender</label>
+          <select name="gender" class="span12">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+          <label>Appointment For</label>
+          <select name="service" class="span12">
+            <option>Massage Service</option>
+            <option>Beauty Service</option>
+            <option>Relaxation Service</option>
+            <option>Other Service</option>
+          </select>
+          <label>Email Id</label>
+          <input name="email" class="validate[required,custom[email]] text-input span12" type="email">           
+          <label>Contact Number</label>
+          <input name="contact" class="validate[required,custom[integer],minSize[10],maxSize[12]] text-input span12" type="text" data-prompt-position="topLeft">
+          <label>Date</label>
+          <input name="date" class="text-input span12" type="text" data-prompt-position="topLeft">
+          <label>Time</label>
+          <input name="time" class="text-input span12" type="text" data-prompt-position="topLeft">
+          <label>Our Branch</label>
+          <select name="gender" class="span12">
+            <option >Male</option>
+            <option >Female</option>
+          </select>
+          <input type="submit" class="btn btn-green" value="Submit"/>
+        </form>
+        </div><!--/.page dark -->
+      </div><!--/.span4 -->
+    </div><!--/.row-fluid -->
+      
+       
+    <!-- Doctors Carousel 
+        <div class="row-fluid">
+          <div class="span12">
+            <h3>Meet Our Nationally Known Doctors</h3>
+            <div class="content">
+          <div id="carousel" class="es-carousel-wrapper">
+        <div class="es-carousel">
+          <ul>
+            <li><a href="#"><img src="{echo CDN}img/carousel/1.jpg" alt="image01" /></a></li>
+            <li><a href="#"><img src="{echo CDN}img/carousel/2.jpg" alt="image02" /></a></li>
+            <li><a href="#"><img src="{echo CDN}img/carousel/3.jpg" alt="image03" /></a></li>
+            <li><a href="#"><img src="{echo CDN}img/carousel/4.jpg" alt="image04" /></a></li>
+            <li><a href="#"><img src="{echo CDN}img/carousel/5.jpg" alt="image05" /></a></li>
+            <li><a href="#"><img src="{echo CDN}img/carousel/6.jpg" alt="image06" /></a></li>
+            <li><a href="#"><img src="{echo CDN}img/carousel/7.jpg" alt="image07" /></a></li>
+            <li><a href="#"><img src="{echo CDN}img/carousel/8.jpg" alt="image08" /></a></li>
+            <li><a href="#"><img src="{echo CDN}img/carousel/9.jpg" alt="image09" /></a></li>
+            <li><a href="#"><img src="{echo CDN}img/carousel/10.jpg" alt="image10" /></a></li>
+            <li><a href="#"><img src="{echo CDN}img/carousel/11.jpg" alt="image11" /></a></li>
+            <li><a href="#"><img src="{echo CDN}img/carousel/12.jpg" alt="image12" /></a></li>
+            <li><a href="#"><img src="{echo CDN}img/carousel/13.jpg" alt="image13" /></a></li>
+            <li><a href="#"><img src="{echo CDN}img/carousel/14.jpg" alt="image14" /></a></li>
+            <li><a href="#"><img src="{echo CDN}img/carousel/15.jpg" alt="image15" /></a></li>
+                  </ul>
+        </div><!--/.es-carousel 
+          </div><!--#carousel 
+        </div><!--/.content 
+          </div><!--./span12 --
+        </div><!--/.row-fluid --
+      </div><!--/.container -->
+      <!-- End Doctors Carousel -->   
+    
+    </section>

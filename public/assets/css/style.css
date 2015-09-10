@@ -85,7 +85,7 @@ footer .copyright { border-top:1px solid #017d69; padding: 10px 0; text-align: c
 
 /* Blog and Blog Detail */
 .blog-cp, .blog-date, .blog-cp ul, .blog-cp ul li, .blog-cp ul li a, .entry { float: left; }
-.blog-cp { width: 100%; float: left; background: #6cd8ca; height: 35px;}
+.blog-cp { width: auto; float: left; background: #6cd8ca; height: 35px;}
 .blog-date { width: auto; height: 43px; position: relative; background: url(../img/date.png) no-repeat; top:-14px; left:7px; color: #088474; font-family: Georgia; line-height: 43px; font-size: 23px; padding-left: 7px; }
 .blog-cp ul { list-style: none; margin-left: 10px; float: right }
 .blog-cp ul li { margin: 4px 5px 0 0; }

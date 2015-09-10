@@ -47,6 +47,21 @@ $routes = array(
         "pattern" => "packages/seasonal",
         "controller" => "home",
         "action" => "seasonal"
+    ),
+    array(
+        "pattern" => "packages/beauty",
+        "controller" => "home",
+        "action" => "beauty"
+    ),
+    array(
+        "pattern" => "packages/massage",
+        "controller" => "home",
+        "action" => "massage"
+    ),
+    array(
+        "pattern" => "packages/combination",
+        "controller" => "home",
+        "action" => "combination"
     )
 
 );

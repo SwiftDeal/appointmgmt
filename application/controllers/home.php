@@ -21,12 +21,20 @@ class Home extends Controller {
     public function gallery() {
         
     }
+    
+    /* Package Pages start*/
     public function special() {
-        
     }
     public function seasonal() {
-        
     }
+    public function beauty() {
+    }
+    public function massage() {    
+    }
+    public function combination() {
+    }
+     /* Package Pages end*/
+
     public function medicines() {
         
     }

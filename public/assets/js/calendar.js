@@ -1,3 +1,7 @@
+var now = new Date();
+now = now.toISOString();
+var today = now.split("T")[0];	// today: '2015-09-14'
+
 $(document).ready(function () {
 	$("#calendar").fullCalendar({
 		header: {
@@ -8,8 +12,11 @@ $(document).ready(function () {
 		dayClick: function (date) {
 			$('#sendDate').attr("value", date.format());
 			$('#addEvent').modal('show');
+			$('#addAppointment').on('submit', function () {
+				reloadCalCal();
+			});
 		},
-		defaultDate: "2015-02-12",
+		defaultDate: today,
 		timezone: 'Asia/Kolkata',
 		editable: true,
 		eventClick: function (event) {
@@ -39,8 +46,13 @@ function deleteEvent(eventId) {
 		} else {
 			alert('Failed to delete appointment');
 		}
+		reloadCal();
 	})
 	.fail(function() {
 		alert('Failed to delete appointment');
 	});
+}
+
+function reloadCal() {
+	window.location.href = "/appointments";
 }

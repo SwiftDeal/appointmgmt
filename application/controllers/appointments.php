@@ -11,17 +11,12 @@ use Framework\Registry as Registry;
 class Appointments extends Admin {
 
 	/**
-	 * @before _secure
+	 * @before _secure, changeLayout
 	 */
 	public function index() {
-		$this->defaultLayout = "layouts/calendar";
-        $this->setLayout();
-		// show all the appointments for the given user
 		$this->seo(array("title" => "Schedule Your Appointments", "view" => $this->getLayoutView()));
         $this->getLayoutView()->set("cal", true);
         $view = $this->getActionView();
-        $view->set("cal", true);
-        
 	}
 
 	/**

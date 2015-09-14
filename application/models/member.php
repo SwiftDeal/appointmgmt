@@ -11,6 +11,7 @@ class Member extends Shared\Model {
      * @column
      * @readwrite
      * @type integer
+     * @index
      */
     protected $_user_id;
     

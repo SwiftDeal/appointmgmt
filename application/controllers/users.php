@@ -9,6 +9,10 @@ use Shared\Controller as Controller;
 use Framework\RequestMethods as RequestMethods;
 
 class Users extends Controller {
+	public function JSONview() {
+        $this->willRenderLayoutView = false;
+        $this->defaultExtension = "json";
+    }
 
     public function profile() {
         

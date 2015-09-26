@@ -33,6 +33,17 @@ class User extends Shared\Model {
      * @column
      * @readwrite
      * @type text
+     * @length 10
+     * 
+     * @validate required, min(3), max(10)
+     * @label gender
+     */
+    protected $_gender;
+
+    /**
+     * @column
+     * @readwrite
+     * @type text
      * @length 100
      * @unique
      * @index
@@ -60,6 +71,6 @@ class User extends Shared\Model {
      * @type boolean
      * @index
      */
-    protected $_validity;
+    protected $_admin = false;
 
 }

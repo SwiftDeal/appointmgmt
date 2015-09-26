@@ -11,21 +11,23 @@ use Framework\Registry as Registry;
 class Admin extends Users {
     
     /**
-     * @readwrite
-     */
-    protected $_member;
-    
-    /**
-     * @readwrite
-     */
-    protected $_project;
-    
-    /**
      * @before _secure, changeLayout
      */
     public function index() {
         $this->seo(array("title" => "Dashboard", "view" => $this->getLayoutView()));
         $view = $this->getActionView();
+        $now = strftime("%Y-%m-%d", strtotime('now'));
+
+        $users = User::count();
+        $appointments = Appointment::count();
+        $payTotal = 0;
+        $payDaily = 0;
+
+        $view->set("now", $now);
+        $view->set("payTotal", $payTotal);
+        $view->set("payDaily", $payDaily);
+        $view->set("users", $users);
+        $view->set("appointments", $appointments);
     }
     
     /**
@@ -169,31 +171,15 @@ class Admin extends Users {
             $user = User::first(array(
                 "email = ?" => RequestMethods::post("email"),
                 "password = ?" => sha1(RequestMethods::post("password")),
-                "validity" => TRUE
+                "live" => TRUE
             ));
             if ($user) {
-                $members = Member::all(array("user_id = ?" => $user->id));
-                $projects = array();
-                foreach ($members as $member) {
-                    $projects[] = Project::first(array("id = ?" => $member->project_id));
-                }
-                $this->session($user, $projects);
-                $view->set("projects", $projects);
+                $this->setUser($user);
                 self::redirect("/admin");
             } else {
                 $view->set("message", "User not exist or blocked");
             }
         }
-    }
-
-    protected function session($user, $projects) {
-        $this->setUser($user);
-        Registry::get("session")->set("projects", $projects);
-        Registry::get("session")->set("project", $projects[0]);
-        Registry::get("session")->set("member", Member::first(array(
-            "project_id = ?" => $projects[0]->id, 
-            "user_id" => $this->user->id
-        )));
     }
 
     public function register() {
@@ -210,16 +196,10 @@ class Admin extends Users {
                     "email" => RequestMethods::post("email"),
                     "password" => sha1(RequestMethods::post("password")),
                     "phone" => RequestMethods::post("phone"),
-                    "validity" => FALSE
+                    "admin" => FALSE,
+                    "gender" => "male"
                 ));
                 $user->save();
-                
-                $member = new Member(array(
-                    "user_id" => $user->id,
-                    "designation" => "member",
-                    "project_id" => "1"
-                ));
-                $member->save();
                 $view->set("message", "Your account has been created contact HR to activate");
             } else {
                 $view->set("message", 'Account exists, login from <a href="/admin/login">here</a>');
@@ -227,45 +207,12 @@ class Admin extends Users {
         }
     }
     
-    public function switchProject($project_id) {
-        $this->noview();
-        $session = Registry::get("session");
-        $projects = $session->get("projects");
-
-        foreach ($projects as $project) {
-            if ($project_id == $project->id) {
-                $session->set("member", Member::first(array(
-                    "project_id = ?" => $project->id, 
-                    "user_id" => $this->user->id
-                )));
-                
-                $session->set("project", Project::first(array(
-                    "id = ?" => $project->id
-                )));
-                self::redirect("/admin");
-            }
-        }
-        
-        echo 'You are not assigned that project';
-    }
-    
     public function changeLayout() {
         $this->defaultLayout = "layouts/admin";
         $this->setLayout();
-
-        $session = Registry::get("session");
-        $projects = $session->get("projects");
-        $project = $session->get("project");
-        $member = $session->get("member");
-        $this->_member = $member;
-        $this->_project = $project;
-
-        $this->getActionView()->set("projects", $projects);
-        $this->getLayoutView()->set("projects", $projects);
-        $this->getActionView()->set("project", $project);
-        $this->getLayoutView()->set("project", $project);
-        $this->getActionView()->set("member", $member);
-        $this->getLayoutView()->set("member", $member);
+        if ($this->user->admin == 0) {
+            die('Not Authorised');
+        }
     }
 
 }

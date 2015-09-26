@@ -44,3 +44,6 @@ Temporary Items
 sftp-config.json
 /nbproject/
 /configuration/
+application/configuration/database.ini
+
+application/configuration/database.ini

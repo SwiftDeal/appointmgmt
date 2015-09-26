@@ -37,33 +37,7 @@ $routes = array(
         "pattern" => "gallery",
         "controller" => "home",
         "action" => "gallery"
-    ),
-    array(
-        "pattern" => "packages/special",
-        "controller" => "home",
-        "action" => "special"
-    ),
-    array(
-        "pattern" => "packages/seasonal",
-        "controller" => "home",
-        "action" => "seasonal"
-    ),
-    array(
-        "pattern" => "packages/beauty",
-        "controller" => "home",
-        "action" => "beauty"
-    ),
-    array(
-        "pattern" => "packages/massage",
-        "controller" => "home",
-        "action" => "massage"
-    ),
-    array(
-        "pattern" => "packages/combination",
-        "controller" => "home",
-        "action" => "combination"
     )
-
 );
 
 // add defined routes

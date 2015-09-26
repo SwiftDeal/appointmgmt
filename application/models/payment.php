@@ -20,7 +20,7 @@ class Payment extends Shared\Model {
      * @readwrite
      * @type integer
      */
-    protected $_project_id;
+    protected $_appointment_id;
     
     /**
      * @column

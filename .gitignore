@@ -49,3 +49,5 @@ application/configuration/database.ini
 application/configuration/database.ini
 
 *.sublime-workspace
+
+*.sublime-project

@@ -15,8 +15,14 @@ class Finance extends Admin {
      * @before _secure, changeLayout
      */
     public function index() {
-        $this->seo(array("title" => "Dashboard", "view" => $this->getLayoutView()));
+        $this->seo(array("title" => "Finance", "view" => $this->getLayoutView()));
         $view = $this->getActionView();
+        if (RequestMethods::get("created")) {
+            $page = RequestMethods::get("page", 1);
+            $date = RequestMethods::get("created");
+            $payments = Payment::all(array("created LIKE ?" => "%{$date}%"), array("*"), "id", "desc", "10", $page);
+            $view->set("payments", $payments);
+        }
     }
     
     /**

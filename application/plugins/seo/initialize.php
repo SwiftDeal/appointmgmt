@@ -4,12 +4,12 @@
 include("seo.php");
 
 $seo = new SEO(array(
-    "title" => "SwiftDeal Online LLP",
-    "keywords" => "swiftdeal online llp" ,
-    "description" => "One of the premier internet company india",
+    "title" => "Ayurveda Treatment",
+    "keywords" => "ayurved, ayurveda, ayurvedic treatment in delhi india" ,
+    "description" => "We promote health, wellness, Beauty & cure through natural healing system to mankind at an affordable cost.",
     "author" => "",
     "robots" => "INDEX,FOLLOW",
-    "photo" => CDN . "img/logo.png"
+    "photo" => CDN . "images/newlogo.PNG"
 ));
 
 Framework\Registry::set("seo", $seo);

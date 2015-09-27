@@ -47,3 +47,5 @@ sftp-config.json
 application/configuration/database.ini
 
 application/configuration/database.ini
+
+*.sublime-workspace

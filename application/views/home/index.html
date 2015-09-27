@@ -17,9 +17,9 @@
             <div class="page">
               <h3 class="tree">Why Ayurveda?</h3>
               <span class="box-icon">
-                <img src="{echo CDN}img/box-icons/team.png" alt=""/>
+                <img src="{echo CDN}img/box-icons/team.png" alt="Team"/>
               </span>
-              <img src="{echo CDN}img/doctors.png" alt="" />
+              <img src="{echo CDN}images/whyayurveda.jpg" alt="Why Ayurveda" />
               <p>The major sources of Ayurvedic Treatments are pure herbs and minerals which has no side effects. This system provides low cost treatment for various common disorders and several chronic ailments. According to Ayurveda, health is maintained by three functional Mechanisms vata, pitta and kapha. It focuses on causes rather than symptoms and it has preventive measures, promotive and curative interventions.It is a comprehensive health care system.</p>
               <span class="btn btn-green">Read More</span>
             </div><!--/.page -->
@@ -54,7 +54,7 @@
         <img src="{echo CDN}img/box-icons/appontment.png" alt="" />
           </span>
           <p>Wunc vitae tortor a risus condimentum laoreet. Aliquam vel felis eget sapien consequat rutrum.</p>
-        <form id="formID" method="post" action="#">
+        <form id="formID" method="post" action="">
           <label>Name in full</label>
           <input name="name" class="validate[required] text-input span12" type="text">          
           <label>Gender</label>
@@ -64,25 +64,24 @@
           </select>
           <label>Appointment For</label>
           <select name="service" class="span12">
-            <option>Massage Service</option>
-            <option>Beauty Service</option>
-            <option>Relaxation Service</option>
-            <option>Other Service</option>
+            <option value="Massage Service">Massage Service</option>
+            <option value="Beauty Service">Beauty Service</option>
+            <option value="Relaxation Service">Relaxation Service</option>
+            <option value="Other">Other Service</option>
           </select>
           <label>Email Id</label>
           <input name="email" class="validate[required,custom[email]] text-input span12" type="email">           
           <label>Contact Number</label>
           <input name="contact" class="validate[required,custom[integer],minSize[10],maxSize[12]] text-input span12" type="text" data-prompt-position="topLeft">
           <label>Date</label>
-          <input name="date" class="text-input span12" type="text" data-prompt-position="topLeft">
-          <label>Time</label>
-          <input name="time" class="text-input span12" type="text" data-prompt-position="topLeft">
-          <label>Our Branch</label>
-          <select name="gender" class="span12">
-            <option >Male</option>
-            <option >Female</option>
+          <input name="date" class="text-input span12" type="date" data-prompt-position="topLeft">
+          <label>Branch</label>
+          <select name="location" class="span12">
+            <option value="mayur vihar">Mayur Vihar</option>
+            <option value="sarita vihar">Sarita Vihar</option>
           </select>
           <input type="submit" class="btn btn-green" value="Submit"/>
+          <input type="hidden" name="action" value="appointment">
         </form>
         </div><!--/.page dark -->
       </div><!--/.span4 -->

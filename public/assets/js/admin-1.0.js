@@ -1,5 +1,9 @@
 $(function () {
     $('#side-menu').metisMenu();
+
+    //initialize beautiful datetime picker
+    $("input[type=date]").datepicker();
+    $("input[type=date]").datepicker("option", "dateFormat", "yy-mm-dd");
 });
 
 //Loads the correct sidebar on window load,

@@ -1,0 +1,46 @@
+<div id="page-wrapper">
+    <div class="row col-lg-12">
+        <h1 class="page-header text-center">Finance</h1>
+        <form class="form-inline text-center" role="form" action="">
+            <div class="form-group">
+                <div class="input-group">
+                    <label class="sr-only">Date</label>
+                    <span class="add-on input-group-addon"><i class="fa fa-calendar fa-fw"></i> Date</span>
+                    <input type="date" style="width: 200px" name="created" class="form-control" />
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Show</button>
+        </form>
+        <hr>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="fa fa-server fa-fw"></i> Records
+            </div>
+            <div class="panel-body">
+                <div id="stats">Select a model and date range and then click on view stats button to show details.</div>
+            </div>
+            <table class="table table-striped text-center table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>User</th>
+                        <th>Appointment</th>
+                        <th>Amount</th>
+                        <th>Comment</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {foreach $payment in $payments} {script $user = User::first(array("id = ?" => $payment->user_id), array("name"))} {script $appointment = Appointment::first(array("id = ?" => $payment->appointment_id), array("title"))}
+                    <tr>
+                        <td>{echo $payment->id}</td>
+                        <td>{echo $user->name}</td>
+                        <td>{echo $appointment->title}</td>
+                        <td>{echo $payment->amount}</td>
+                        <td>{echo $payment->comment}</td>
+                    </tr>
+                    {/foreach}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

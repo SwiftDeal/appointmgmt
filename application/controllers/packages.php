@@ -8,6 +8,7 @@
 use Framework\Controller as Controller;
 
 class Packages extends Controller {
+	
 	public function MassageTherapies() {
 		
 	}
@@ -16,18 +17,19 @@ class Packages extends Controller {
 		
 	}
 
-	public function CombinationalTherapies()
-	{
+	public function CombinationalTherapies() {
 		# code...
 	}
 
-	public function SeasonalTreatment()
-	{
+	public function SeasonalTreatment() {
 		# code...
 	}
 
-	public function special()
-	{
+	public function special() {
+		# code...
+	}
+
+	public function WeightLoss() {
 		# code...
 	}
 

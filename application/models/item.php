@@ -5,7 +5,7 @@
  *
  * @author Faizan Ayubi
  */
-class Project extends Shared\Model {
+class Item extends Shared\Model {
     
     /**
      * @column
@@ -13,7 +13,7 @@ class Project extends Shared\Model {
      * @type text
      * @length 128
      */
-    protected $_name;
+    protected $_title;
     
     /**
      * @column
@@ -22,4 +22,15 @@ class Project extends Shared\Model {
      * @length 255
      */
     protected $_details;
+
+    /**
+     * @column
+     * @readwrite
+     * @type text
+     * @length 16
+     * 
+     * @validate required, alpha, min(1), max(16)
+     * @label amount
+     */
+    protected $_price;
 }

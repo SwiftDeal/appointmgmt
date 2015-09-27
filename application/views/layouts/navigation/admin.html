@@ -19,14 +19,9 @@
             </a>
             <ul class="dropdown-menu dropdown-user">
                 <li><a href="/admin"><i class="fa fa-gear fa-fw"></i> Dashboard</a></li>
-                <li><a href="/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
+                <li><a href="/"><i class="fa fa-home fa-fw"></i> Home</a></li>
                 <li class="divider"></li>
-                {script $projects = (empty($projects) ? array() : $projects)}
-                {foreach $project in $projects}
-                {if $project}
-                <li><a href="/admin/switchProject/{$project->id}"><i class="fa fa-briefcase fa-fw"></i> {echo $project->name}</a></li>
-                {/if}
-                {/foreach}
+                <li><a href="/auth/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
             </ul>
         </li>
     </ul>
@@ -38,9 +33,9 @@
             <li><a href="/admin"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a></li>
             <li><a href="/admin/search"><i class="fa fa-search fa-fw"></i> Search</a></li>
             <li>
-                <a href="#"><i class="fa fa-money fa-fw"></i> Finance<span class="fa arrow"></span></a>
+                <a href="#"><i class="fa fa-money fa-fw"></i> Earnings<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
-                    <li><a href="/finance/expenses">Expenses</a></li>
+                    <li><a href="/finance/add">Add</a></li>
                     <li><a href="/finance">Records</a></li>
                 </ul>
             </li>

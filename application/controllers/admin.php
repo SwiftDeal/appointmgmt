@@ -8,7 +8,7 @@
 use Framework\RequestMethods as RequestMethods;
 use Framework\Registry as Registry;
 
-class Admin extends Users {
+class Admin extends Auth {
     
     /**
      * @before _secure, changeLayout

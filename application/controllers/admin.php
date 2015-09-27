@@ -161,49 +161,24 @@ class Admin extends Auth {
         $db->sync(new $model);
     }
 
-    public function login() {
-        $this->defaultLayout = "layouts/blank";
-        $this->setLayout();
-        $this->seo(array("title" => "Login", "view" => $this->getLayoutView()));
+    /**
+     * @before _secure, changeLayout
+     */
+    public function data() {
+        $this->seo(array("title" => "Data Analysis", "keywords" => "admin", "description" => "admin", "view" => $this->getLayoutView()));
         $view = $this->getActionView();
+        if (RequestMethods::get("action") == "dataAnalysis") {
+            $startdate = RequestMethods::get("startdate");
+            $enddate = RequestMethods::get("enddate");
+            $model = ucfirst(RequestMethods::get("model"));
 
-        if (RequestMethods::post("action") == "login") {
-            $user = User::first(array(
-                "email = ?" => RequestMethods::post("email"),
-                "password = ?" => sha1(RequestMethods::post("password")),
-                "live" => TRUE
-            ));
-            if ($user) {
-                $this->setUser($user);
-                self::redirect("/admin");
-            } else {
-                $view->set("message", "User not exist or blocked");
+            $diff = date_diff(date_create($startdate), date_create($enddate));
+            for ($i = 0; $i < $diff->format("%a"); $i++) {
+                $date = date('Y-m-d', strtotime($startdate . " +{$i} day"));
+                $count = $model::count(array("created LIKE ?" => "%{$date}%"));
+                $obj[] = array('y' => $date, 'a' => $count);
             }
-        }
-    }
-
-    public function register() {
-        $this->defaultLayout = "layouts/blank";
-        $this->setLayout();
-        $this->seo(array("title" => "Register", "view" => $this->getLayoutView()));
-        $view = $this->getActionView();
-
-        if (RequestMethods::post("action") == "register") {
-            $exist = User::first(array("email = ?" => RequestMethods::post("email")));
-            if (!$exist) {
-                $user = new User(array(
-                    "name" => RequestMethods::post("name"),
-                    "email" => RequestMethods::post("email"),
-                    "password" => sha1(RequestMethods::post("password")),
-                    "phone" => RequestMethods::post("phone"),
-                    "admin" => FALSE,
-                    "gender" => "male"
-                ));
-                $user->save();
-                $view->set("message", "Your account has been created contact HR to activate");
-            } else {
-                $view->set("message", 'Account exists, login from <a href="/admin/login">here</a>');
-            }
+            $view->set("data", \Framework\ArrayMethods::toObject($obj));
         }
     }
     

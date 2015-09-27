@@ -7,7 +7,25 @@
  */
 use Framework\Controller as Controller;
 
-class Packages extends Controller {
+class Packages extends Admin {
+
+	/**
+     * @before _secure, changeLayout
+     */
+	public function create() {
+		
+	}
+
+	public function view($id='') {
+		
+	}
+
+	/**
+     * @before _secure, changeLayout
+     */
+    public function edit($id='') {
+    	
+    }
 	
 	public function MassageTherapies() {
 		

@@ -5,7 +5,6 @@
  *
  * @author Faizan Ayubi
  */
-use Framework\Controller as Controller;
 use Framework\RequestMethods as RequestMethods;
 
 class Package extends Admin {
@@ -62,29 +61,4 @@ class Package extends Admin {
 		$view->set("page", $page);
 		$view->set("packages", $packages);
 	}
-	
-	public function MassageTherapies() {
-		
-	}
-
-	public function BeautyTreatment() {
-		
-	}
-
-	public function CombinationalTherapies() {
-		# code...
-	}
-
-	public function SeasonalTreatment() {
-		# code...
-	}
-
-	public function special() {
-		# code...
-	}
-
-	public function WeightLoss() {
-		# code...
-	}
-
 }

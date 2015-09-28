@@ -34,9 +34,9 @@ $routes = array(
         "action" => "quesans"
     ),
     array(
-        "pattern" => "gallery",
+        "pattern" => "ayurveda",
         "controller" => "home",
-        "action" => "gallery"
+        "action" => "ayurveda"
     )
 );
 

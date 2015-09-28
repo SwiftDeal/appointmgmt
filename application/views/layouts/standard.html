@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  
+
 <head>
     <!-- Basic meta tags -->
     <meta charset="utf-8">
@@ -8,85 +8,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-
     <!-- CSS styles -->
     <link href="{echo CDN}css/validationengine.css" rel="stylesheet">
     <link href="{echo CDN}css/style.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{echo CDN}css/prettyPhoto.css"/>
-      
-    <!-- Google Web font 'PT Sans and Yanone Kaffeesatz' -->  
+    <link rel="stylesheet" type="text/css" href="{echo CDN}css/prettyPhoto.css" />
+    <!-- Google Web font 'PT Sans and Yanone Kaffeesatz' -->
     <link href="{echo CDN}css/cssbea1.css?family=PT+Sans+Narrow|Yanone+Kaffeesatz:400,300,700" rel="stylesheet' type='text/css">
-     
     <!-- Jquery Library -->
     <script src="{echo CDN}js/jquery-1.7.1.min.js"></script>
-    
     <!-- for IE6-8 support of HTML5 elements & Seperate CSS for ie-8-7 -->
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
       <link href="css/ie8-7.css" rel="stylesheet">
     <![endif]-->
-    
-  </head>
+    <script src="/public/assets/js/tinymce/tinymce.min.js"></script>
+    <script type="text/javascript">
+    tinymce.init({
+        selector: ".editor",
+        plugins: [
+            "advlist autolink lists link image charmap print preview anchor",
+            "searchreplace visualblocks code fullscreen",
+            "insertdatetime media table contextmenu jbimages"
+        ],
+        toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media jbimages",
+        autosave_ask_before_unload: false,
+        max_height: 200,
+        min_height: 160,
+        height: 180,
+        relative_urls: false
+    });
+    </script>
+</head>
 
-  <body>
-
-    {include layouts/navigation/standard.html}
-    {ayield action}
- 
+<body>
+    {include layouts/navigation/standard.html} {ayield action}
     <!-- Footer -->
     <footer>
-      <div class="container">
-        <div class="row-fluid">
-          <div class="span4">
-            <ul class="nav nav-list">
-              <li class="nav-header">Contact Us</li>
-              <li><span class="label label-inverse">Telephone</span> +911-22611386</li>
-              <li><span class="label label-inverse">Mobile</span> +91 9999498910, 9811754580</li>
-              <li><span class="label label-inverse">Email</span> info@ayurvedictreatment.in</li>
-            </ul>
-          </div><!--/.span3 -->
-
-          <div class="span4">
-           <ul class="nav nav-list">
-              <li class="nav-header">WEBSITE NAVIGATION</li>
-              <li><a href="/about">About Us</a></li>
-              <li><a href="/packages/special">Special Offer</a></li>
-              <li><a href="/contact">Contact Us</a></li>
-            </ul>
-          </div><!--/.span3 -->
-        
-          <div class="span4">
-            <ul class="nav nav-list">
-              <li class="nav-header">Social with us</li>
-              <li><a href="https://www.facebook.com/ayurvedatreatment12">Facebook</a></li>
-              <li><a href="#">Twitter</a></li>
-            </ul>
-          </div><!--/.span3 -->
-          <div class="span12 copyright">
-          <span class="pull-left">
+        <div class="container">
+            <div class="row-fluid">
+                <div class="span4">
+                    <ul class="nav nav-list">
+                        <li class="nav-header">Contact Us</li>
+                        <li><span class="label label-inverse">Telephone</span> +911-22611386</li>
+                        <li><span class="label label-inverse">Mobile</span> +91 9999498910, 9811754580</li>
+                        <li><span class="label label-inverse">Email</span> info@ayurvedictreatment.in</li>
+                    </ul>
+                </div>
+                <!--/.span3 -->
+                <div class="span4">
+                    <ul class="nav nav-list">
+                        <li class="nav-header">WEBSITE NAVIGATION</li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/packages/special">Special Offer</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <!--/.span3 -->
+                <div class="span4">
+                    <ul class="nav nav-list">
+                        <li class="nav-header">Social with us</li>
+                        <li><a href="https://www.facebook.com/ayurvedatreatment12">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                    </ul>
+                </div>
+                <!--/.span3 -->
+                <div class="span12 copyright">
+                    <span class="pull-left">
             © 2015 Ayurvedic Treatment. All Rights reserved.
           </span>
-            
-            <span class="pull-right"><a href="https://cloudstuffs.com/" target="_blank">Developed By CloudStuffs</a></span>
-          </div><!--/.span12 -->
-        </div><!--/.row-fluid -->
-      </div><!--/.container -->
+                    <span class="pull-right"><a href="https://cloudstuffs.com/" target="_blank">Developed By CloudStuffs</a></span>
+                </div>
+                <!--/.span12 -->
+            </div>
+            <!--/.row-fluid -->
+        </div>
+        <!--/.container -->
     </footer>
     <!-- End Footer -->
     <!-- Twitter Bootstrap -->
     <script src="{echo CDN}js/bootstrap/bootstrap.js"></script>
     <!-- Form Validation -->
-    <script src="{echo CDN}js/validate/jquery.validationEngine.js"></script> 
+    <script src="{echo CDN}js/validate/jquery.validationEngine.js"></script>
     <script type="text/javascript" src="{echo CDN}js/jquery.elastislide.js"></script>
     <!--Gallery -->
-     <script type="text/javascript" src="{echo CDN}js/photo-gallery/jquery.prettyPhoto.js"></script> 
-    <script type="text/javascript" src="{echo CDN}js/photo-gallery/jquery.quicksand.js"></script> 
-    <script type="text/javascript" src="{echo CDN}js/photo-gallery/jquery.easing.1.3.js"></script> 
+    <script type="text/javascript" src="{echo CDN}js/photo-gallery/jquery.prettyPhoto.js"></script>
+    <script type="text/javascript" src="{echo CDN}js/photo-gallery/jquery.quicksand.js"></script>
+    <script type="text/javascript" src="{echo CDN}js/photo-gallery/jquery.easing.1.3.js"></script>
     <script type="text/javascript" src="{echo CDN}js/photo-gallery/script.js"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-
     <!-- Custom to call-->
     <script src="{echo CDN}js/custom.js"></script>
-  </body>
+</body>
+
 </html>

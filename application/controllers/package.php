@@ -8,7 +8,7 @@
 use Framework\Controller as Controller;
 use Framework\RequestMethods as RequestMethods;
 
-class Packages extends Admin {
+class Package extends Admin {
 
 	/**
      * @before _secure, changeLayout
@@ -16,6 +16,17 @@ class Packages extends Admin {
 	public function create() {
 		$this->seo(array("title" => "Create Package", "view" => $this->getLayoutView()));
 		$view = $this->getActionView();
+
+		if (RequestMethods::post("action") == "create") {
+			$item = new Item(array(
+				"title" => RequestMethods::post("title"),
+				"details" => RequestMethods::post("details"),
+				"price" => RequestMethods::post("price"),
+				"type" => "package"
+			));
+			$item->save();
+			$view->set("success", true);
+		}
 	}
 
 	public function details($title, $id='') {

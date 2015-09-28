@@ -12,16 +12,20 @@
                             </a>
                             <a href="/admin/search?model=user&key=created&sign=like&value={echo $now}" class="list-group-item"><i class="fa fa-users fa-2x"></i>  Users <span class="badge">{echo $users}</span></a>
                             <a href="/appointments" class="list-group-item"><i class="fa fa-calendar fa-2x"></i>  Appointments <span class="badge">{echo $appointments}</span></a>
+                            <a href="/admin/search?model=appointment&key=created&sign=like&value={echo $now}" class="list-group-item"><i class="fa fa-inr fa-2x"></i>  Total <span class="badge">{echo $payTotal}</span></a>
+                            <a href="/appointments" class="list-group-item"><i class="fa fa-inr fa-2x"></i>  Daily <span class="badge">{echo $payDaily}</span></a>
                         </div>
                     </div>
 
                     <div class="col-lg-4">
                         <div class="list-group">
                             <a class="list-group-item active text-center">
-                                <i class="fa fa-money"></i> Payments
+                                <i class="fa fa-bullhorn"></i> Marketing
                             </a>
-							<a href="/admin/search?model=appointment&key=created&sign=like&value={echo $now}" class="list-group-item"><i class="fa fa-inr fa-2x"></i>  Total <span class="badge">{echo $payTotal}</span></a>
-							<a href="/appointments" class="list-group-item"><i class="fa fa-inr fa-2x"></i>  Daily <span class="badge">{echo $payDaily}</span></a>
+							<a href="https://adwords.google.com/cm/CampaignMgmt" class="list-group-item"><i class="fa fa-google fa-2x"></i>  Google Adwords</a>
+                            <a href="https://www.google.com/analytics/web" class="list-group-item"><i class="fa fa-pie-chart fa-2x"></i>  Google Analytics</a>
+                            <a href="https://www.google.com/webmasters/tools/dashboard" class="list-group-item"><i class="fa fa-globe fa-2x"></i>  Google Webmaster</a>
+                            <a href="https://www.facebook.com/ads/manager/account/campaigns/?act=591454987540654&pid=p1" class="list-group-item"><i class="fa fa-facebook-official fa-2x"></i>  Facebook Campaigns</a>
                         </div>
                     </div>
 

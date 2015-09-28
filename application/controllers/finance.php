@@ -21,7 +21,9 @@ class Finance extends Admin {
             $page = RequestMethods::get("page", 1);
             $date = RequestMethods::get("created");
             $payments = Payment::all(array("created LIKE ?" => "%{$date}%"), array("*"), "id", "desc", "10", $page);
+            
             $view->set("payments", $payments);
+            $view->set("page", $page);
         }
     }
     

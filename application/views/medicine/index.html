@@ -5,6 +5,7 @@
             <!-- Tab -->
             <div class="page">
                 <h3 class="tree">Medicines</h3>
+                <p>We are Authorised stockist and distributor of ayurvedshalla kottakkal</p>
                 <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -18,7 +19,7 @@
                     {foreach $medicine in $medicines}
                         <tr>
                             <td>{$medicine->title}</td>
-                            <td>substr(strip_tags($medicine->details), 0, 50)</td>
+                            <td>{echo substr(strip_tags($medicine->details), 0, 50)}</td>
                         </tr>
                     {/foreach}
                     </tbody>

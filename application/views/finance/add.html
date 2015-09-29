@@ -1,0 +1,57 @@
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header text-center">Add new Payment</h1>
+            {if isset($success)}
+            <div class="alert alert-success alert-dismissible fade in" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                Medicine Added <strong>Successfully!</strong>
+            </div>
+            {/if}
+            
+            <p>Include Videos and Images in details</p>
+            <form method="post" action="">
+                <div class="panel panel-default panel-body">
+                    <div class="form-group">
+                        <label>Customer Name *</label>
+                        <input type="text" name="title" class="form-control" maxlength="100" required="">
+                        <span class="help-block">{echo Shared\Markup::errors($errors, "title")}</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Customer Phone *</label>
+                        <input type="tel" name="phone" class="form-control" maxlength="15" required="">
+                        <span class="help-block">{echo Shared\Markup::errors($errors, "title")}</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Customer Email *</label>
+                        <input type="email" name="title" class="form-control" required="">
+                        <span class="help-block">{echo Shared\Markup::errors($errors, "title")}</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Service *</label>
+                        <select name="service" class="form-control">
+                            <option value="Abhyangam">Abhyangam</option>
+                            <option value="Beauty Service">Beauty Service</option>
+                            <option value="Relaxation Service">Relaxation Service</option>
+                            <option value="Weight Loss">Weight Loss</option>
+                            <option value="Sharodhara">Sharodhara</option>
+                            <option value="Pizhichil">Pizhichil</option>
+                            <option value="Rejuvenation">Rejuvenation</option>
+                            <option value="Njavarakizhi">Njavarakizhi</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Price *</label>
+                        <input type="text" class="form-control" name="price">
+                        <span class="help-block">{echo Shared\Markup::errors($errors, "payment")}Enter Only Numbers</span>
+                    </div>
+
+                    <input type="hidden" name="action" value="medicine">
+                    <button type="submit" class="btn btn-primary pull-right"><i class="fa fa-check-circle"></i> Create</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

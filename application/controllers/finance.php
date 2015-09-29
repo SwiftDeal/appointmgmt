@@ -8,6 +8,16 @@
 use Framework\RequestMethods as RequestMethods;
 
 class Finance extends Admin {
+
+    /**
+     * Shows all project expenses
+     * 
+     * @before _secure, changeLayout
+     */
+    public function add() {
+        $this->seo(array("title" => "Add Payment", "view" => $this->getLayoutView()));
+        $view = $this->getActionView();
+    }
     
     /**
      * Shows all project expenses

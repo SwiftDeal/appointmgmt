@@ -57,9 +57,8 @@ class Home extends Controller {
         $view = $this->getActionView();
     }
 
-    public function quesans() {
-        $this->seo(array("title" => "Dashboard", "view" => $this->getLayoutView()));
+    public function gallery() {
+        $this->seo(array("title" => "Treatment Center Gallery", "view" => $this->getLayoutView()));
         $view = $this->getActionView();
     }
-
 }

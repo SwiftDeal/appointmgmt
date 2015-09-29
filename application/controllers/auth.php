@@ -63,6 +63,6 @@ class Auth extends Controller {
 
     public function logout() {
         $this->setUser(false);
-        self::redirect("/login");
+        self::redirect("/admin/login");
     }
 }

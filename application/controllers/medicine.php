@@ -49,7 +49,7 @@ class Medicine extends Admin {
 		));
 		$view = $this->getActionView();
 
-		$view->set("medicine", $item);
+		$view->set("package", $item);
 	}
 
 	/**

@@ -24,6 +24,16 @@ $routes = array(
         "action" => "about"
     ),
     array(
+        "pattern" => "feedback",
+        "controller" => "home",
+        "action" => "feedback"
+    ),
+    array(
+        "pattern" => "gallery",
+        "controller" => "home",
+        "action" => "gallery"
+    ),
+    array(
         "pattern" => "quesans",
         "controller" => "home",
         "action" => "quesans"

@@ -6,7 +6,10 @@
             <div class="span12">
                 <span class="btn btn-large btn-block  btn-green"><h1><strong><a>{echo $package->title}</a></strong></h1></span>
                 <div class="page clearfix no-padd">
-                    <div class="entry">{echo $package->details}</div>
+                    <div class="entry">
+                        {echo $package->details}
+                        <h4><span class="pull-right"> Price @ ₹{echo $package->price}</span><br></h4>
+                    </div>
                 </div>
                 <!--/.page .clearfix .no-padd -->
             </div>

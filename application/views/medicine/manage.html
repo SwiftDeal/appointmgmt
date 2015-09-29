@@ -1,0 +1,33 @@
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header text-center">Medicines</h1>
+            <div class="panel panel-default">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Posted</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {foreach $medicine in $medicines}
+                        <tr>
+                            <td>{echo $medicine->id}</td>
+                            <td><a href="/medicine/details/{echo Framework\StringMethods::url($medicine->title)}/{echo $medicine->id}" target="_blank" >{echo $medicine->title}</a></td>
+                            <td>{echo $medicine->created}</td>
+                            <td>
+                                <button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button>&nbsp;
+                                <a href="/medicine/edit/{$medicine->id}" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Edit </a>&nbsp;
+                            </td>
+                        </tr>
+                        {/foreach}
+                    </tbody>
+                </table>
+                
+            </div>
+        </div>
+    </div>
+</div>

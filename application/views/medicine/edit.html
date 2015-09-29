@@ -1,0 +1,39 @@
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header text-center">{$package->title}</h1>
+            {if isset($success)}
+            <div class="alert alert-success alert-dismissible fade in" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                Medicine Updated <strong>Successfully!</strong>
+            </div>
+            {/if}
+            
+            <p>Include Videos and Images in details</p>
+            <form method="post" action="">
+                <div class="panel panel-default panel-body">
+                    <div class="form-group">
+                        <label>Medicine Name *</label>
+                        <input type="text" name="title" class="form-control" maxlength="100" required="" value="{$package->title}">
+                        <span class="help-block">{echo Shared\Markup::errors($errors, "title")}</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Details *</label>
+                        <textarea class="form-control editor" name="details" rows="5">{$package->details}</textarea>
+                        <span class="help-block">{echo Shared\Markup::errors($errors, "details")}</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Fees *</label>
+                        <input type="text" class="form-control" name="price" value="{$package->price}">
+                        <span class="help-block">{echo Shared\Markup::errors($errors, "payment")}Enter Only Numbers</span>
+                    </div>
+
+                    <input type="hidden" name="action" value="update">
+                    <button type="submit" class="btn btn-primary pull-right"><i class="fa fa-check-circle"></i> Create</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

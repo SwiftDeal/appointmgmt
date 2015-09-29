@@ -37,13 +37,13 @@ class Home extends Controller {
     }
 
     public function contact() {
-        $this->seo(array("title" => "Dashboard", "view" => $this->getLayoutView()));
+        $this->seo(array("title" => "Contact Us", "view" => $this->getLayoutView()));
         $view = $this->getActionView();
         //@sunilwnz@gmail.com
     }
 
     public function about() {
-        $this->seo(array("title" => "Dashboard", "view" => $this->getLayoutView()));
+        $this->seo(array("title" => "About Us", "view" => $this->getLayoutView()));
         $view = $this->getActionView();
     }
 
@@ -52,8 +52,8 @@ class Home extends Controller {
         $view = $this->getActionView();
     }
     
-    public function medicines() {
-        $this->seo(array("title" => "Dashboard", "view" => $this->getLayoutView()));
+    public function feedback() {
+        $this->seo(array("title" => "Users Feedback", "view" => $this->getLayoutView()));
         $view = $this->getActionView();
     }
 

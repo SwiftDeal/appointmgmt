@@ -16,7 +16,7 @@ class Package extends Admin {
 		$this->seo(array("title" => "Create Package", "view" => $this->getLayoutView()));
 		$view = $this->getActionView();
 
-		if (RequestMethods::post("action") == "create") {
+		if (RequestMethods::post("action") == "package") {
 			$item = new Item(array(
 				"title" => RequestMethods::post("title"),
 				"details" => RequestMethods::post("details"),
@@ -45,7 +45,20 @@ class Package extends Admin {
      * @before _secure, changeLayout
      */
     public function edit($id='') {
-    	$this->seo(array("title" => "Edit Package", "keywords" => "admin", "description" => "admin", "view" => $this->getLayoutView()));
+    	$this->seo(array("title" => "Edit Package", "view" => $this->getLayoutView()));
+    	$view = $this->getActionView();
+
+    	$item = Item::first(array("id = ?" => $id));
+    	if(RequestMethods::post("action") == "update") {
+    		$item->title = RequestMethods::post("title");
+    		$item->details = RequestMethods::post("details");
+    		$item->price = RequestMethods::post("price");
+
+    		$item->save();
+			$view->set("success", true);
+    	}
+
+    	$view->set("package", $item);
     }
 
     /**

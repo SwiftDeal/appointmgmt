@@ -69,7 +69,7 @@ class Package extends Admin {
 		$view = $this->getActionView();
 
 		$page = RequestMethods::get("page", 1);
-		$packages = Item::all(array(), array("*"), "id", "desc", "10", $page);
+		$packages = Item::all(array("type = ?" => "package"), array("*"), "id", "desc", "10", $page);
 
 		$view->set("page", $page);
 		$view->set("packages", $packages);

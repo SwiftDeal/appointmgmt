@@ -24,11 +24,6 @@ $routes = array(
         "action" => "about"
     ),
     array(
-        "pattern" => "medicines",
-        "controller" => "home",
-        "action" => "medicines"
-    ),
-    array(
         "pattern" => "quesans",
         "controller" => "home",
         "action" => "quesans"

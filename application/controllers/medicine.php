@@ -9,6 +9,17 @@ use Framework\RequestMethods as RequestMethods;
 
 class Medicine extends Admin {
 
+	public function index() {
+		$this->seo(array("title" => "Ayurvedic Medicines", "view" => $this->getLayoutView()));
+		$view = $this->getActionView();
+
+		$page = RequestMethods::get("page", 1);
+		$medicines = Item::all(array("type = ?" => "medicine"), array("*"), "id", "desc", "10", $page);
+
+		$view->set("page", $page);
+		$view->set("medicines", $medicines);
+	}
+
 	/**
      * @before _secure, changeLayout
      */

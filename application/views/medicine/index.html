@@ -1,0 +1,30 @@
+<!-- Section content -->
+<section id="content">
+    <div class="container marg-top">
+        <div class="row-fluid">
+            <!-- Tab -->
+            <div class="page">
+                <h3 class="tree">Medicines</h3>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Medicines</th>
+                            <th>
+                                <center>Details</center>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {foreach $medicine in $medicines}
+                        <tr>
+                            <td>{$medicine->title}</td>
+                            <td>substr(strip_tags($medicine->details), 0, 50)</td>
+                        </tr>
+                    {/foreach}
+                    </tbody>
+                </table>
+            </div>
+            <!-- End Tab -->
+        </div>
+    </div>
+</section>

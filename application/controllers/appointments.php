@@ -75,4 +75,40 @@ class Appointments extends Admin {
 		echo json_encode($events);
 	}
 
+	/**
+	 * @before _secure, changeLayout
+	 */
+	public function display($id) {
+		$this->seo(array("title" => "Display Appointments", "view" => $this->getLayoutView()));
+		$view = $this->getActionView();
+		$apptmt = Appointment::first(array("id = ?" => $id), array("title", "id", "location", "user_id"));
+		$usr = User::first(array("id = ?" => $apptmt->user_id), array("name", "email", "phone"));
+		if (!$apptmt) {
+			$view->set("err", "Invalid ID");
+		} else {
+			$view->set("usr", $usr);
+			$view->set("e", $apptmt);
+		}
+	}
+
+
+	/**
+	 * @before _secure, changeLayout
+	 */
+	public function edit($appointId) {
+		$this->seo(array("title" => "Edit an Appointment", "view" => $this->getLayoutView()));
+		$view = $this->getActionView();
+
+		$apptmt = Appointment::first(array("id = ?" => $appointId));
+		
+		if (RequestMethods::post("action") == "editApptmt") {
+			$apptmt->title = RequestMethods::post("title");
+			$apptmt->location = RequestMethods::post("location");
+			$apptmt->save();
+		}
+
+		$view->set("apptmt", $apptmt);
+
+
+	}
 }

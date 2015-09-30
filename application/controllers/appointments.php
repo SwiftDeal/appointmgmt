@@ -65,8 +65,8 @@ class Appointments extends Admin {
 		foreach ($results as $r) {
 			$events[] = array(
 				"title" => $r->title,
-				"start" => explode(" ", $r->start)[0],
-				"end" => explode(" ", $r->end)[0],
+				"start" => $this->returnTime($r->start),
+				"end" => $this->returnTime($r->start),
 				"allDay" => ($r->allDay) ? true : false,
 				"id" => $r->id
 			);
@@ -105,10 +105,18 @@ class Appointments extends Admin {
 			$apptmt->title = RequestMethods::post("title");
 			$apptmt->location = RequestMethods::post("location");
 			$apptmt->save();
+
+			$view->set("message", "Appointment Updated Successfully");
 		}
 
 		$view->set("apptmt", $apptmt);
 
 
+	}
+
+	private function returnTime($date) {
+		$d = explode(" ", $date);
+		$d = implode("T", $d);
+		return $d;
 	}
 }

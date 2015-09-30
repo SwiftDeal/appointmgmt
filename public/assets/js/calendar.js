@@ -28,11 +28,7 @@ $(document).ready(function () {
 			displayEvent(event.id);
 		},
 		eventLimit: true, // allow "more" link when too many events
-		eventSources: ["/appointments/all"],
-		eventResize: function (event, delta, revertFunc) {
-			alert('event is changed');
-			console.log(event);
-		}
+		eventSources: ["/appointments/all"]
 	});
 
 	$('#appointDel').on('click', function (e) {

@@ -37,7 +37,7 @@ class Package extends Admin {
 			"view" => $this->getLayoutView()
 		));
 		$view = $this->getActionView();
-
+		
 		$view->set("package", $item);
 	}
 

@@ -19,6 +19,35 @@ class Appointments extends Admin {
         $view = $this->getActionView();
 	}
 
+	public function success() {
+		$this->seo(array("title" => "Schedule Your Appointments", "view" => $this->getLayoutView()));
+        $view = $this->getActionView();
+
+        if (RequestMethods::post("action") == "appointment") {
+            $user = new User(array(
+                "name" => RequestMethods::post("name"),
+                "email" => RequestMethods::post("email"),
+                "password" => sha1(rand(100000, 9999999)),
+                "phone" => RequestMethods::post("contact"),
+                "admin" => FALSE,
+                "gender" => RequestMethods::post("gender")
+            ));
+            $user->save();
+            $view->set("user", $user);
+            
+            $appointment = new Appointment(array(
+                "user_id" => $user->id,
+                "title" => RequestMethods::post("service"), 
+                "start" => RequestMethods::post("date"),
+                "end" => RequestMethods::post("date"),
+                "allDay" => "1",
+                "location" => RequestMethods::post("location")
+            ));
+            $appointment->save();
+            $view->set("appointment", $appointment);
+        }
+	}
+
 	/**
 	 * @before _secure
 	 */

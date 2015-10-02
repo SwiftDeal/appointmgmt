@@ -2,18 +2,48 @@
 <section id="content">
     <div class="container">
         <div class="row-fluid">
-            <br>
-            <div class="span12">
+            <div class="page clearfix">
                 <span class="btn btn-large btn-block  btn-green"><h1><strong><a>{echo $package->title}</a></strong></h1></span>
-                <div class="page clearfix no-padd">
+                <div class="span8 no-marg-left">
                     <div class="entry">
                         {echo $package->details}
                         <h4><span class="pull-right"> Payment @ ₹{echo $package->price}</span><br></h4>
                     </div>
                 </div>
-                <!--/.page .clearfix .no-padd -->
+                <!--/.span9 -->
+                <div class="span4">
+                    <div class="page dark">
+                        <h3 class="snow">Get Appointment</h3>
+                        <form id="formID" method="post" action="/appointments/success">
+                            <label>Name in full</label>
+                            <input name="name" class="validate[required] text-input span12" type="text">
+                            <label>Gender</label>
+                            <select name="gender" class="span12">
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                            <label>Appointment For</label>
+                            <input type="hidden" name="service" value="{echo $package->title}">
+                            <label>Email Id</label>
+                            <input name="email" class="validate[required,custom[email]] text-input span12" type="email">
+                            <label>Contact Number</label>
+                            <input name="contact" class="validate[required,custom[integer],minSize[10],maxSize[12]] text-input span12" type="text" data-prompt-position="topLeft">
+                            <label>Date</label>
+                            <input name="date" class="text-input span12" type="date" data-prompt-position="topLeft">
+                            <label>Branch</label>
+                            <select name="location" class="span12">
+                                <option value="mayur vihar">Mayur Vihar</option>
+                                <option value="sarita vihar">Sarita Vihar</option>
+                            </select>
+                            <input type="submit" class="btn btn-green" value="Submit" />
+                            <input type="hidden" name="action" value="appointment">
+                        </form>
+                    </div>
+                    <!--/.page .dark -->
+                </div>
+                <!--/.span3 -->
             </div>
-            <!-- span8 -->
+            <!--/.page -->
         </div>
         <!--/.container -->
     </div>

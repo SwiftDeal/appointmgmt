@@ -105,11 +105,14 @@ function showAppointment(appointmnt, usr) {
 
 function changeAppointment(e) {
 	var apptmtId = e.id,
-		apptmtStart = e.start._i;
+		date = e.start._d;
+
+	var start = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
+	start += " 00:00:00";
 	
 	request.create({
 		action: '/appointments/change',
-		data: {action: "changeAppointment", id: apptmtId, start: apptmtStart},
+		data: {action: "changeAppointment", id: apptmtId, start: start},
 		callback: function (data) {
 			if (data.success) {
 				alert("The appointment has been rescheduled");

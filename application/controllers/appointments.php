@@ -156,14 +156,8 @@ class Appointments extends Admin {
 		$view = $this->getActionView();
 
 		if (RequestMethods::post("action") == "changeAppointment") {
-			$created = RequestMethods::post("start");
-			$created = explode("T", $created)[0];
-			
-			$date = date("Y-m-d", strtotime($created."+1 day"));
-			$date .= " 00:00:00";
-
 			$apptmt = Appointment::first(array("id = ?" => RequestMethods::post("id")));
-			$apptmt->start = $date;
+			$apptmt->start = RequestMethods::post("start");
 			$apptmt->save();
 
 			$view->set("success", "Appointment has been saved");

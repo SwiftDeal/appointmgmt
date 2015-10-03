@@ -24,6 +24,12 @@ $(document).ready(function () {
 		defaultDate: today,
 		timezone: 'Asia/Kolkata',
 		editable: true,
+		eventDrop: function (event, delta, revertFunc) {
+			if (!confirm("Are you sure about this change?")) {
+				revertFunc();
+			}
+			changeAppointment(event);
+		},
 		eventClick: function (event) {
 			displayEvent(event.id);
 		},
@@ -95,4 +101,19 @@ function showAppointment(appointmnt, usr) {
 	} else {
 		alert('Could not fetch data for the appointment');
 	}
+}
+
+function changeAppointment(e) {
+	var apptmtId = e.id,
+		apptmtStart = e.start._i;
+	
+	request.create({
+		action: '/appointments/change',
+		data: {action: "changeAppointment", id: apptmtId, start: apptmtStart},
+		callback: function (data) {
+			if (data.success) {
+				alert("The appointment has been rescheduled");
+			}
+		}
+	});
 }

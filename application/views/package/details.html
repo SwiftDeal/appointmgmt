@@ -14,7 +14,12 @@
                 <div class="span4">
                     <div class="page dark">
                         <h3 class="snow">Get Appointment</h3>
-                        <form id="formID" method="post" action="/appointments/success">
+                        <form id="formID" method="post" action="/appointments/success"> 
+                            <label>Branch(Location)</label>
+                            <select name="location" class="span12">
+                                <option value="mayur vihar">Mayur Vihar, Delhi</option>
+                                <option value="sarita vihar">Sarita Vihar, Delhi</option>
+                            </select>
                             <label>Name in full</label>
                             <input name="name" class="validate[required] text-input span12" type="text">
                             <label>Gender</label>
@@ -29,11 +34,6 @@
                             <input name="contact" class="validate[required,custom[integer],minSize[10],maxSize[12]] text-input span12" type="text" data-prompt-position="topLeft">
                             <label>Date</label>
                             <input name="date" class="text-input span12" type="date" data-prompt-position="topLeft">
-                            <label>Branch</label>
-                            <select name="location" class="span12">
-                                <option value="mayur vihar">Mayur Vihar</option>
-                                <option value="sarita vihar">Sarita Vihar</option>
-                            </select>
                             <input type="submit" class="btn btn-green" value="Submit" />
                             <input type="hidden" name="action" value="appointment">
                         </form>
